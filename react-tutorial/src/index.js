@@ -1,23 +1,31 @@
-// import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom';
 import App from './App';
-import './index.css';
-import React, { Component } from 'react';
+import { createStore } from 'redux'
+import counter from './reducers'
+import Counter from './components/Counter'
+const store = createStore(counter);
 
-// ReactDOM.render(
-//   <App />,
-//   document.getElementById('root')
-// );
+const rootEl = document.getElementById('root');
 
-// class App extends Component {
-//     render(){
-//         return (
-//             <div className="App">
-//                 <h1>Hello,React!</h1>
-//             </div>
-//         )
-//     }
-// }
+console.log('测试stroe的state------>',store.getState())
+const render1 = () => ReactDOM.render(
+    <Counter
+        value={store.getState()}
+        onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
+        onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+    />,
+    rootEl
+)
+const render = () => ReactDOM.render(
+    <App
+        value={store.getState()}
+        onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
+        onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+    />,
+    rootEl
+)
 
+render();
 
-ReactDOM.render(<App />,document.getElementById('root'));
+store.subscribe(render)

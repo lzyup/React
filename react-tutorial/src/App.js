@@ -1,56 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Table from './Table'
-import Form from './Form'
-
+import Counter from './components/Counter'
+import PropTypes from 'prop-types'
 class App extends Component {
-    state = {
-        characters: [
-            {
-                name: "Charlie",
-                job: "Janitor"
-            },
-            {
-                name: "Mac",
-                job: "Bouncer"
-            },
-            {
-                name: "Dee",
-                job: "Aspring actress"
-            },
-            {
-                name: "Dennis",
-                job: "Bartender"
-            }
-        ]
+    constructor(props){
+        super(props)
+        console.log('测试props---->',this.props);
+        // this.state = { value: this.props.value,onIncrement:this.props.onIncrement,onDecrement:this.props.onDecrement};
     }
 
-    removeCharacter = index =>{
-        const {characters} = this.state;
-
-        this.setState({
-            characters:characters.filter((character,i)=>{
-                return i !== index;
-            })
-        })
-    }
-
-    handleSubmit = character =>{
-        console.log('测试character---->',character);
-        this.setState({characters:[...this.state.characters,character]})
-        console.log('提交state---->',this.state.characters);
-    }
-
-    render() {
-        const {characters} = this.state;
-        return (
-            <div className="container">
-                <Table characterData={characters} removeCharacter={this.removeCharacter} />
-                <Form handleSubmit={this.handleSubmit}/>
-            </div>
+    render(){
+        return(
+            <Counter
+                value={this.props.value}
+                onIncrement={this.props.onIncrement}
+                onDecrement={this.props.onDecrement}
+            >
+            </Counter>
         )
     }
+}
+
+
+App.propTypes = {
+    value:PropTypes.number.isRequired,
+    onIncrement:PropTypes.func.isRequired,
+    onDecrement:PropTypes.func.isRequired
 }
 
 export default App;
