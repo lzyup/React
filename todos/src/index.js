@@ -7,7 +7,7 @@ import {Provider} from 'react-redux'
 import rootReducer from './reducers'
 
 const store = createStore(rootReducer)
-console.log('测试store---->',store.getState());
+console.log('测试store---->',store);
 ReactDOM.render(
     <Provider store={store}>
         <App />
