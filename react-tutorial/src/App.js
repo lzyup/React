@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Counter from './components/Counter'
 import PropTypes from 'prop-types'
+import WordAdder from './components/WordAdder';
 class App extends Component {
     constructor(props){
         super(props)
@@ -10,12 +11,13 @@ class App extends Component {
 
     render(){
         return(
-            <Counter
-                value={this.props.value}
-                onIncrement={this.props.onIncrement}
-                onDecrement={this.props.onDecrement}
-            >
-            </Counter>
+            // <Counter
+            //     value={this.props.value}
+            //     onIncrement={this.props.onIncrement}
+            //     onDecrement={this.props.onDecrement}
+            // >
+            // </Counter>
+            <WordAdder />
         )
     }
 }
