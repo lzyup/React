@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Counter from './components/Counter'
 import PropTypes from 'prop-types'
 import WordAdder from './components/WordAdder';
+import Colock from './components/Colock'
 class App extends Component {
     constructor(props){
         super(props)
@@ -17,7 +18,8 @@ class App extends Component {
             //     onDecrement={this.props.onDecrement}
             // >
             // </Counter>
-            <WordAdder />
+            <Colock></Colock>
+            // <WordAdder />
         )
     }
 }
