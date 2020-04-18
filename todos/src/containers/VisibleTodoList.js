@@ -6,7 +6,6 @@ import TodoList from '../components/TodoList'
 import {VisibilityFilters} from '../actions'
 
 const getVisibleTodos = (todos,filter)=>{
-    console.log('测试filter--->',filter);
     switch(filter){
         case VisibilityFilters.SHOW_ALL:
             return todos
@@ -20,7 +19,6 @@ const getVisibleTodos = (todos,filter)=>{
 }
 
 const mapStateToProps = state=>{
-    console.log('测试state--->',state)
     return { todos: getVisibleTodos(state.todos, state.visibilityFilter)} 
 }
 
