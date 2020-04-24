@@ -7,11 +7,11 @@ class Colok extends Component {
 
     componentDidMount() {
 
-        setInterval(() => {
-            this.setState({
-                data: '1'
-            })
-        }, 1000);
+        // setInterval(() => {
+        //     this.setState({
+        //         data: '1'
+        //     })
+        // }, 1000);
     }
 
     render() {
