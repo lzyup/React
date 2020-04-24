@@ -5,6 +5,7 @@ import WordAdder from './components/WordAdder';
 import Colock from './components/Colock'
 import NameForm from './components/Form'
 import SelectForm from './components/Form1'
+import Welcome from './components/Welcome'
 class App extends Component {
     constructor(props) {
         super(props)
@@ -21,6 +22,7 @@ class App extends Component {
             // >
             // </Counter>
             <div>
+                <Welcome name="luzy"></Welcome>
                 <Colock></Colock>
                 <NameForm></NameForm>
                 <SelectForm></SelectForm>
