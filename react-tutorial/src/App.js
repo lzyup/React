@@ -6,12 +6,28 @@ import Colock from './components/Colock'
 import NameForm from './components/Form'
 import SelectForm from './components/Form1'
 import Welcome from './components/Welcome'
+import Example from './components/HookExample'
 class App extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            name: 'w'
+        }
+        this.name = 'w';
         console.log('测试props---->', this.props);
         // this.state = { value: this.props.value,onIncrement:this.props.onIncrement,onDecrement:this.props.onDecrement};
     }
+
+    componentDidMount(){
+        let i = 1;
+        setInterval(() => {
+            this.setState({
+                name: (i++ + 'b')
+            })
+            console.log('name--->', this.state.name);
+        }, 1000);
+    }
+    compo
 
     render() {
         return (
@@ -22,7 +38,8 @@ class App extends Component {
             // >
             // </Counter>
             <div>
-                <Welcome name="luzy"></Welcome>
+                <Example></Example>
+                <Welcome name={this.state.name}></Welcome>
                 <Colock></Colock>
                 <NameForm></NameForm>
                 <SelectForm></SelectForm>
