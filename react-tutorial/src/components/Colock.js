@@ -6,7 +6,7 @@ class Colok extends Component {
     }
 
     componentDidMount() {
-
+        console.log('didmount')
         // setInterval(() => {
         //     this.setState({
         //         data: '1'
@@ -14,11 +14,17 @@ class Colok extends Component {
         // }, 1000);
     }
 
+    componentWillReceiveProps(){
+        console.log('willReceiveProps');
+    }
+
     render() {
+        console.log('render111')
+        const {name } = this.props;
         return (
             <div>
                 <h1>Hello,world</h1>
-                <h2>It is {this.state.data}</h2>
+                <h2>It is {name}</h2>
             </div>
         )
     }

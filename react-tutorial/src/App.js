@@ -13,7 +13,7 @@ class App extends Component {
         this.state = {
             name: 'w'
         }
-        this.name = 'w';
+        this.name = 'k';
     }
 
     componentDidMount(){
@@ -24,9 +24,16 @@ class App extends Component {
         //     })
         // }, 1000);
     }
-    compo
+    change(){
+        // this.setState({
+        //     name:'change'
+        // })
+        console.log(111);
+        this.name = 'cc';
+    }
 
     render() {
+        // const { name } = this.state
         return (
             // <Counter
             //     value={this.props.value}
@@ -35,11 +42,12 @@ class App extends Component {
             // >
             // </Counter>
             <div>
-                <Example></Example>
-                <Welcome name={this.state.name}></Welcome>
-                <Colock></Colock>
-                <NameForm></NameForm>
-                <SelectForm></SelectForm>
+                {/* <Example></Example>
+                <Welcome name={this.state.name}></Welcome> */}
+                <Colock name={this.name}></Colock>
+                <button onClick={()=>{this.change()}}></button>
+                {/* <NameForm></NameForm>
+                <SelectForm></SelectForm> */}
             </div>
             // <WordAdder />
         )
