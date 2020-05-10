@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Counter from './components/Counter'
-import PropTypes from 'prop-types'
+import Counter from './components/Counter';
+import PropTypes from 'prop-types';
 import WordAdder from './components/WordAdder';
 import Colock from './components/Colock'
 import NameForm from './components/Form'
@@ -14,18 +14,15 @@ class App extends Component {
             name: 'w'
         }
         this.name = 'w';
-        console.log('测试props---->', this.props);
-        // this.state = { value: this.props.value,onIncrement:this.props.onIncrement,onDecrement:this.props.onDecrement};
     }
 
     componentDidMount(){
         let i = 1;
-        setInterval(() => {
-            this.setState({
-                name: (i++ + 'b')
-            })
-            console.log('name--->', this.state.name);
-        }, 1000);
+        // setInterval(() => {
+        //     this.setState({
+        //         name: (i++ + 'b')
+        //     })
+        // }, 1000);
     }
     compo
 

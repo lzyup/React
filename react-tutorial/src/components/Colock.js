@@ -15,7 +15,6 @@ class Colok extends Component {
     }
 
     render() {
-        console.log('111111');
         return (
             <div>
                 <h1>Hello,world</h1>

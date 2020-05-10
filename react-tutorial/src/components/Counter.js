@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 class Counter extends Component {
     constructor(props){
         super(props);
-        console.log('测试counter的props---->',this.props);
         this.incrementAsync = this.incrementAsync.bind(this);
         this.incrementIfOdd = this.incrementIfOdd.bind(this);
     }
@@ -21,9 +20,6 @@ class Counter extends Component {
 
     render(){
         const {value,onIncrement,onDecrement} = this.props;
-        console.log('counter value---->',value);
-        console.log('counter onIncrement--->',onIncrement);
-        console.log('counter onDecrement---->',onDecrement);
         return(
             <p>
                 Clicked:{value} times
