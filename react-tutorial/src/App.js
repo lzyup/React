@@ -7,6 +7,7 @@ import NameForm from './components/Form'
 import SelectForm from './components/Form1'
 import Welcome from './components/Welcome'
 import Example from './components/HookExample'
+import HookCapture from './components/HookCapture.js'
 class App extends Component {
     constructor(props) {
         super(props)
@@ -72,6 +73,7 @@ class App extends Component {
             // </Counter>
             <div>
                 {/* <Example></Example> */}
+                <HookCapture></HookCapture>
                 {/* <Welcome name={this.state.name}></Welcome> */}
                 {/* <Colock></Colock> */}
                 {/* <NameForm name={this.name}></NameForm> */}

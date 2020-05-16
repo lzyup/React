@@ -1,21 +1,19 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import React from 'react'
 
 function Example() {
     //声明一个新的状态变量，我们将其称为"count"
-    const [count, setCount] = useState(0);
-    const [fruit, setFurit] = useState({a:'apple'})
+    const [obj, setObject] = useState({
+        count: 0,
+        name: 'alife'
+    })
 
     return (
-        <div>
-            <p>You clicked {count} times</p>
-            <p>Fruit {fruit.a} </p>
-            <button onClick={() => setCount(count + 1)}>
-                Click me1
-            </button>
-            <button onClick={() => setFurit({a:'banana'})}>
-                Click me1
-            </button>
+        <div className="App">
+            <p>Count: {obj.count}</p>
+            <p>Name: {obj.name}</p>
+            <button onClick={() => setObject({ count: obj.count + 1 })}>+</button>
+            <button onClick={() => setObject({ count: obj.count - 1 })}>-</button>
         </div>
     )
 }

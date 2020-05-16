@@ -6,16 +6,9 @@ class Colok extends Component {
     }
 
     componentDidMount() {
-
-        // setInterval(() => {
-        //     this.setState({
-        //         data: '1'
-        //     })
-        // }, 1000);
     }
 
     render() {
-        console.log('111111');
         return (
             <div>
                 <h1>Hello,world</h1>
