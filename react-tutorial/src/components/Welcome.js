@@ -1,32 +1,28 @@
-import React from 'react'
-export default function Welcome(props){
-    console.log('测试函数式组件的this',this);
-    const target = { a: 1, b: 2 }
-    const source = { b: null, c: 5 }
-
-    const returnedTarget = Object.assign(target, source)
-    let arr1 = [1,2,4,7];
-    let arr2 = [3,8,9];
-    let flag2 = arr2.some((item,i)=>{
-        console.log('item',item)
-        arr1.some((e,j)=>{
-            console.log('吃e-->', e);
-            if(e==1){
-                return true
-            }
-           
-        })
-       
-    })
-    let flag =  arr1.some((e,index)=>{
-        console.log('e',e);
-         return e===7;  
-    })
-    console.log('测试flag---->', flag);
-    console.log('测试flag2---->', flag2);
-    // target // { a: 1, b: 4, c: 5 }
-    // returnedTarget // { a: 1, b: 4, c: 5 }
-    target.a = 'lzy';
-    console.log(target,returnedTarget)
-    return <h1>Hello, {props.name}</h1>
+import React, { useState } from 'react'
+export default function Welcome(props) {
+    console.log('函数组件', this);
+    const [person, setPerson] = useState(null);
+    function changeName() {
+        setPerson({ name: 'Luzy' });
+        console.log(111, person);
+        setTimeout(() => {
+            console.log(222, person);
+        }, 5000);
+    }
+    function changeSex() {
+        setPerson({ sex: 'female' })
+        console.log(333, person);
+        setTimeout(() => {
+            console.log(444, person);
+        }, 1000);
+    }
+    function getInfo() {
+        console.log('person', person);
+    }
+    return <div>
+        <h1>Hello, {props.name}</h1>
+        <p onClick={changeName}>点击1</p>
+        <p onClick={changeSex}>点击2</p>
+        <p onClick={getInfo}>拿到信息</p>
+    </div>
 }

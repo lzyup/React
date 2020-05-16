@@ -10,6 +10,7 @@ import Example from './components/HookExample'
 class App extends Component {
     constructor(props) {
         super(props)
+        console.log(1111);
         this.state = {
             name: 'w'
         }
@@ -18,16 +19,48 @@ class App extends Component {
         // this.state = { value: this.props.value,onIncrement:this.props.onIncrement,onDecrement:this.props.onDecrement};
     }
 
-    componentDidMount(){
-        let i = 1;
-        setInterval(() => {
-            this.setState({
-                name: (i++ + 'b')
-            })
-            console.log('name--->', this.state.name);
-        }, 1000);
+    componentWillMount() {
+        console.log('willmount');
     }
-    compo
+
+    componentDidMount() {
+        console.log('didMount');
+    }
+
+    componentWillReceiveProps(nextProps) {
+        //通过this.props来获取旧的外部状态，初始props不会被调用
+        console.log('willReceiveProps', this.props, nextProps);
+    }
+
+    componentWillUpdate() {
+        console.log('willUpdate')
+    }
+
+    componentDidUpdate() {
+        console.log('didUpdate')
+    }
+
+    componentWillUnmount() {
+        console.log('willUnmount');
+    }
+
+    componentDidMount() {
+        console.log('DidMount');
+    }
+
+    changeState = () => {
+        this.setState({
+            name: 'Lu'
+        })
+        this.name = 'Lu'
+    }
+
+    changeState1 = () => {
+        this.setState({
+            name: 'Xia'
+        })
+        this.name = 'Xia'
+    }
 
     render() {
         return (
@@ -38,11 +71,14 @@ class App extends Component {
             // >
             // </Counter>
             <div>
-                <Example></Example>
-                <Welcome name={this.state.name}></Welcome>
-                <Colock></Colock>
-                <NameForm></NameForm>
-                <SelectForm></SelectForm>
+                {/* <Example></Example> */}
+                {/* <Welcome name={this.state.name}></Welcome> */}
+                {/* <Colock></Colock> */}
+                {/* <NameForm name={this.name}></NameForm> */}
+                <div onClick={this.changeState}>改变name1</div>
+                <div onClick={this.changeState1}>改变name2</div>
+
+                {/* <SelectForm></SelectForm> */}
             </div>
             // <WordAdder />
         )
