@@ -15,8 +15,7 @@ class App extends Component {
         this.state = {
             name: 'w'
         }
-        this.name = 'w';
-        console.log('测试props---->', this.props);
+        this.name = 'w'
         // this.state = { value: this.props.value,onIncrement:this.props.onIncrement,onDecrement:this.props.onDecrement};
     }
 

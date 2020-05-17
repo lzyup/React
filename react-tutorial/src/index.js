@@ -8,7 +8,6 @@ const store = createStore(counter);
 
 const rootEl = document.getElementById('root');
 
-console.log('测试stroe的state------>',store.getState())
 const render1 = () => ReactDOM.render(
     <Counter
         value={store.getState()}
