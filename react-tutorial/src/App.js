@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Counter from './components/Counter'
-import PropTypes from 'prop-types'
+import Counter from './components/Counter';
+import PropTypes from 'prop-types';
 import WordAdder from './components/WordAdder';
 import Colock from './components/Colock'
 import NameForm from './components/Form'
@@ -63,6 +63,7 @@ class App extends Component {
     }
 
     render() {
+        // const { name } = this.state
         return (
             // <Counter
             //     value={this.props.value}

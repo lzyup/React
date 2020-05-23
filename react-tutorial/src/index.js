@@ -23,8 +23,8 @@ const render = () => ReactDOM.render(
         onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
     />,
     rootEl
-)
+);
 
 render();
 
-store.subscribe(render)
+store.subscribe(render);

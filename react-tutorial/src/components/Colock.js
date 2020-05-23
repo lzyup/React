@@ -8,11 +8,15 @@ class Colok extends Component {
     componentDidMount() {
     }
 
+    componentWillReceiveProps() {
+        console.log('willReceiveProps');
+    }
+
     render() {
         return (
             <div>
                 <h1>Hello,world</h1>
-                <h2>It is {this.state.data}</h2>
+                <h2>It is {name}</h2>
             </div>
         )
     }
