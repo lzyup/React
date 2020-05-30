@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Alert from './components/alert'
 import Carousel from './components/carousel'
+import Example1 from './components/example/Example1'
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <div>carousel item 2</div>,
                 <div>carousel item 3</div>
             ]} />
+            <Example1></Example1>
         </div>
     );
 }
