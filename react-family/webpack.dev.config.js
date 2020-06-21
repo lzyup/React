@@ -49,9 +49,15 @@ module.exports = {
             reducers: path.join(__dirname, 'src/redux/reducers')
         }
     },
-    // plugins: [new HtmlWebpackPlugin({
-    //     filename: 'index.html',
-    //     template: path.join(__dirname, 'src/index.html')
-    // })]
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: path.join(__dirname, 'src/index.html')
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor'
+        })
+
+    ]
 
 }
