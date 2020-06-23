@@ -1,39 +1,17 @@
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifuJSPlugin = require('uglifyjs-webpack-plugin');
+const merge = require('webpack-merge');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 var webpack = require('webpack');
 
-module.exports = {
+const commonConfig = require('./webpack.common.config');
+const { publicEncrypt } = require('crypto');
+
+const publicConfig = {
     devtool: 'cheap-module-source-map',
-    entry: {
-        app: [
-            path.join(__dirname, 'src/index.js')
-        ],
-        vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
-    },
-    output: {
-        path: path.join(__dirname, './dist'),
-        filename: '[name].[chunkhash].js',
-        chunkFilename: '[name].[chunkhash].js',
-        publicPath: '/'
-    },
     module: {
         rules: [{
-            test: /\.js$/,
-            use: ['babel-loader'],
-            include: path.join(__dirname, 'src')
-        }, {
-            test: /\.(png|jpg|gif)$/,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: 8192
-                }
-            }]
-        },
-        {
             test: /\.css$/,
             use: ExtractTextPlugin.extract({
                 fallback: "style-loader",
@@ -42,31 +20,18 @@ module.exports = {
         }]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: path.join(__dirname, 'src/index.html')
+        new CleanWebpackPlugin(['dist/*.*']),
+        new UglifyJSPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'runtime'
-        }),
-        new UglifuJSPlugin(),
-        new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin({
             filename: '[name].[contenthash:5].css',
             allChunks: true
-        }),
-    ],
+        })
+    ]
+}
 
-    resolve: {
-        alias: {
-            pages: path.join(__dirname, 'src/pages'),
-            components: path.join(__dirname, 'src/components'),
-            router: path.join(__dirname, 'src/router'),
-            actions: path.join(__dirname, 'src/redux/actions'),
-            reducers: path.join(__dirname, 'src/redux/reducers')
-        }
-    }
-};
+module.exports = merge(commonConfig, publicConfig);
