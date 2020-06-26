@@ -1,0 +1,36 @@
+$primary-color: #31c27c;
+$warning-color: #fca130;
+$error-color: #f93e3e;
+$success-color: #35C613;
+$info-color: #61affe;
+$bg-color: #FAFAFA;
+$border-color: #e8e8e8;
+$label-color: #333;
+$default-color: #d9d9d9;
+$loading-color: #61affe;
+$font-color: rgba(0, 0, 0, .65);
+$placeholder-color: rgba(0, 0, 0, .3);
+$disabled-color: #f5f5f5;
+$font-size: 14px;
+$font-size-small: 12px;
+$font-size-large: 16px;
+$border-radius: 4px;
+$default-shadow: 0 4px 22px 0 rgba(15, 35, 95, 0.12);
+$default-section-shadow: 0 1px 4px 0 rgba(15, 35, 95, 0.12);
+$default-text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+$picker-offset-top: 5px;
+$mask-bg-color: rgba(0, 0, 0, .5);
+
+//动画时间
+$loading-time: 1.5s;
+$loading-opacity: .7;
+$animate-time : .5s;
+$animate-type: cubic-bezier(0.165, 0.84, 0.44, 1);
+$animate-type-easy-in-out: cubic-bezier(.9, .25, .08, .83);
+$default-transition: $animate-time $animate-type;
+
+//Timeline 时间轴
+$timeline-content-offset: 0 0 0 20px;
+$timeline-line-width: 2px;
+$timeline-dot-width: 10px;
+$timeline-dot-height: 10px;

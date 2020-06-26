@@ -16,15 +16,18 @@ const devConfig = {
         filename: '[name].[hash].js'
     },
     module: {
-        rules: [{
-            test: /\.css$/,
-            use: ["style-loader", "css-loader"]
-        }]
+        rules: [
+            {
+                test: /\.scss$/,
+                use: ["style-loader", "css-loader", "sass-loader"],
+                exclude: /node_modules/
+            }]
     },
     devServer: {
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true,
         host: '0.0.0.0',
+        port: 3000
     }
 };
 
