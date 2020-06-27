@@ -6,8 +6,13 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import routesConfig from './router/router'
 import { BrowserRouter as Router } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config'
 import App from 'components/App/App';
 
+
+if (Array.isArray(routesConfig)) {
+    console.log('xgf--->', routesConfig)
+}
 // renderWithHotReload(App);
 
 // if (module.hot) {
@@ -29,12 +34,13 @@ import App from 'components/App/App';
 //         document.getElementById('app')
 //     )
 // }
-
 ReactDom.render(
     <AppContainer>
         <Provider store={store}>
-            <Router routes={routesConfig}>
+            <Router children={routesConfig}>
+
             </Router>
+            {/* {renderRoutes(routesConfig)} */}
         </Provider>
     </AppContainer>,
     document.getElementById('app')

@@ -10,10 +10,11 @@ import TimeLine from 'pages/TimeLine/TimeLineDemo';
 
 const routes = [
     {
+        path: '/',
         component: App,
         childRoutes: [
             {
-                path: '/',
+                path: '/home',
                 component: Home,
             },
             {
@@ -37,7 +38,7 @@ const getRouter = () => (
     <Router>
         <div>
             <ul>
-                <li><Link to="/">首页</Link></li>
+                <li><Link to="/home">首页</Link></li>
                 <li><Link to="/page1">Page1</Link></li>
                 <li><Link to="/counter">Counter</Link></li>
                 <li><Link to="/timeline">timeline演示</Link></li>
