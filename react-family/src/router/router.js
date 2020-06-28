@@ -10,26 +10,20 @@ import TimeLine from 'pages/TimeLine/TimeLineDemo';
 
 const routes = [
     {
-        path: '/',
-        component: App,
-        childRoutes: [
-            {
-                path: '/home',
-                component: Home,
-            },
-            {
-                path: '/page1',
-                component: Page1,
-            },
-            {
-                path: '/counter',
-                component: Counter
-            },
-            {
-                path: '/timeline',
-                component: TimeLine
-            }
-        ]
+        path: '/home',
+        component: Home,
+    },
+    {
+        path: '/page1',
+        component: Page1,
+    },
+    {
+        path: '/counter',
+        component: Counter
+    },
+    {
+        path: '/timeline',
+        component: TimeLine
     }
 ]
 
