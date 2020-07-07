@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Nav from 'components/Nav/Nav'
+import getRouter from 'router/router';
 
 export default class APP extends Component {
     componentDidUpdate() {
@@ -10,6 +11,7 @@ export default class APP extends Component {
         return (
             <div>
                 <Nav />
+                {getRouter()}
             </div>
         )
     }
