@@ -99,10 +99,9 @@ $prefixCls: timeline;
         &-content{
             margin:$timeline-content-offset;
             position:relative;
-            top:-2px;
         }
         &-line{
-            position:relative;
+            position: absolute;
             width:$timeline-line-width;
             height:100%;
             left:4px;

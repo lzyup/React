@@ -45,29 +45,29 @@ export default class TimelineItem extends PureComponent {
                 })}
                 {...attr}
             >
-                <div className={`${prefixCls}-line`}>
-                    {
-                        // type === 'loading' ? (
-                        //     <div className={`${prefixCls}-dot-loading`}>
-                        //         <span>icon</span>
-                        //     </div>
-                        // ) : (
-                        //         <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
-                        //             {dot}
-                        //         </div>
-                        //     )
-                        <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
-                            {dot}
-                        </div>
-
-                    }
-                    <div
-                        className={`${prefixCls}-content`}
-                        style={{ animationDelay: style.animationDelay }}
-                    >
-                        {children}
+                <div className={`${prefixCls}-line`} />
+                {
+                    // type === 'loading' ? (
+                    //     <div className={`${prefixCls}-dot-loading`}>
+                    //         <span>icon</span>
+                    //     </div>
+                    // ) : (
+                    //         <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
+                    //             {dot}
+                    //         </div>
+                    //     )
+                    <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
+                        {dot}
                     </div>
+
+                }
+                <div
+                    className={`${prefixCls}-content`}
+                    style={{ animationDelay: style.animationDelay }}
+                >
+                    {children}
                 </div>
+
             </li>
         )
     }
