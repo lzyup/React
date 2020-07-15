@@ -186,6 +186,10 @@ class ToolTip extends React.PureComponent {
         }
     }
     componentDidMount() {
+        this.init();
+    }
+
+    componentDidUpdate() {
         this.renderTitle();
     }
 

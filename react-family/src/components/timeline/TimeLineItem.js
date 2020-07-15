@@ -37,7 +37,7 @@ export default class TimelineItem extends PureComponent {
 
     render() {
         const { prefixCls, className, dot, children, type, color, style, ...attr } = this.props;
-
+        console.log('type--->', type);
         return (
             <li
                 className={cls(prefixCls, className, {
@@ -45,23 +45,28 @@ export default class TimelineItem extends PureComponent {
                 })}
                 {...attr}
             >
-                <div className={`${prefixCls}-line`}></div>
-                {
-                    type === 'loading' ? (
-                        <div className={`${prefixCls}-dot-loading`}>
-                            <span>icon</span>
+                <div className={`${prefixCls}-line`}>
+                    {
+                        // type === 'loading' ? (
+                        //     <div className={`${prefixCls}-dot-loading`}>
+                        //         <span>icon</span>
+                        //     </div>
+                        // ) : (
+                        //         <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
+                        //             {dot}
+                        //         </div>
+                        //     )
+                        <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
+                            {dot}
                         </div>
-                    ) : (
-                            <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
-                                {dot}
-                            </div>
-                        )
-                }
-                <div
-                    className={`${prefixCls}-content`}
-                    style={{ animationDelay: style.animationDelay }}
-                >
-                    {children}
+
+                    }
+                    <div
+                        className={`${prefixCls}-content`}
+                        style={{ animationDelay: style.animationDelay }}
+                    >
+                        {children}
+                    </div>
                 </div>
             </li>
         )

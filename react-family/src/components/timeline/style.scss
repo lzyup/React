@@ -1,6 +1,7 @@
-@import '../styles/vars.scss';
+@import '../styles/index.scss';
 
-$prefixCls: time-line;
+
+$prefixCls: timeline;
 
 .#{$prefixCls}{
     line-height: 1.5;
@@ -40,7 +41,6 @@ $prefixCls: time-line;
         padding-bottom:20px;
         margin:0;
         font-size:inherit;
-
         &:last-child{
             .#{$prefixCls}-item-line{
                 display:none;
