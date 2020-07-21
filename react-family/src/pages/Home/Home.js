@@ -14,6 +14,10 @@ export default class Home extends Component {
             count: ++this.state.count
         })
     }
+
+    componentDidMount() {
+        console.log('xgf');
+    }
     render() {
         return (
             <div>
