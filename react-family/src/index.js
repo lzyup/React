@@ -8,6 +8,7 @@ import routesConfig from './router/router'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config'
 import App from 'components/App/App';
+import TimeLine from 'pages/TimeLine/TimeLineDemo';
 
 
 console.log('routesConfig', routesConfig)
@@ -33,15 +34,14 @@ function renderWithHotReload(RootElement) {
     )
 }
 
+//遍历路由表 https://juejin.im/post/5e396af66fb9a07cd323c40d
 function RouteWithSubRoutes(route) {
-    console.log('LUUU', route);
     return (
         <Route
             path={route.path}
-            render={props => (
-                // pass the sub-routes down to keep nesting
-                <route.component {...props} routes={route.routes} />
-            )}
+            render={props => {
+                return (<route.component {...props} />)
+            }}
         />
     )
 }
@@ -49,20 +49,16 @@ function RouteWithSubRoutes(route) {
 ReactDom.render(
     <AppContainer>
         <Provider store={store}>
-            {/* <Router children={routesConfig}>
-
-            </Router> */}
             <Router>
                 <ul>
-                    <li><Link to="/home">首页</Link></li>
+                    <li><Link to="/home">1首页</Link></li>
                     <li><Link to="/page1">Page1</Link></li>
                     <li><Link to="/counter">Counter</Link></li>
                     <li><Link to="/timeline">timeline演示</Link></li>
                 </ul>
                 <Switch>
                     {routesConfig.map((route, index) => {
-                        console.log('xgf');
-                        <RouteWithSubRoutes key={index} {...route} />
+                        return RouteWithSubRoutes(route);
                     })}
                 </Switch>
             </Router>
