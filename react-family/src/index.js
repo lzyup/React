@@ -52,7 +52,7 @@ ReactDom.render(
             <Router>
                 <ul>
                     <li><Link to="/home">1首页</Link></li>
-                    <li><Link to="/page1">Page1</Link></li>
+                    <li><Link to="/scratchcard">ScratchCard</Link></li>
                     <li><Link to="/counter">Counter</Link></li>
                     <li><Link to="/timeline">timeline演示</Link></li>
                 </ul>
