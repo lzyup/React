@@ -6,6 +6,8 @@ export default function Notification(props) {
 
     let timeoutId = null;
 
+    console.log('alert111')
+
     React.useEffect(() => {
         setIsShown(true);
         return () => {
